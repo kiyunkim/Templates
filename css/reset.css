@@ -32,6 +32,7 @@ time, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
+img { max-width: 100%; }
 fieldset, img { border: 0; border: none; }
 ol, ul { list-style: none; }
 sup { vertical-align: text-top; }
@@ -66,7 +67,7 @@ code, kbd, samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
-dfn { font-style: italic; }
+i, cite, em, var, address, dfn { font-style: italic; }
 mark {
   background-color: #ff0;
   color: #000;
