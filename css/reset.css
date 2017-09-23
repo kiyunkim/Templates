@@ -27,6 +27,7 @@ time, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
+img { max-width: 100%; }
 fieldset, img { border: 0; }
 ol, ul { list-style: none; }
 sup { vertical-align: text-top; }
