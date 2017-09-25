@@ -3,7 +3,6 @@
   -moz-border-radius: $radius;
   border-radius: $radius;
 }
-
 @mixin box-sizing {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -15,4 +14,11 @@
   -ms-transition: $var;
   -o-transition: $var;
   transition: $var;
+}
+@mixin transform($var) {
+  -webkit-transform: $var;
+  -moz-transform: $var;
+  -ms-transform: $var;
+  -o-transform: $var;
+  transform: $var;
 }
