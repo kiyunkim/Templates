@@ -1,4 +1,6 @@
-$fontFamily: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$fontfamily: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$black: #333;
+$white: #fff;
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -23,4 +25,30 @@ $fontFamily: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
   -ms-transform: $var;
   -o-transform: $var;
   transform: $var;
+}
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+// below from
+// joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
+@mixin animation($animations) {
+  -webkit-animation: $animations;
+  -moz-animation:    $animations;
+  -o-animation:      $animations;
+  animation:         $animations;
+}
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
 }
