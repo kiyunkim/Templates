@@ -52,3 +52,17 @@ $white: #fff;
     @content;
   }
 }
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+
+// to use :
+input {
+  @include placeholder() {
+    color: #fff;
+  }
+}

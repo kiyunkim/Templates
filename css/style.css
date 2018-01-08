@@ -1,3 +1,16 @@
-/* No CSS */ 
+input::-webkit-input-placeholder {
+  color: #fff;
+}
 
- /*# sourceMappingURL= style.css.map */
+input:-moz-placeholder {
+  color: #fff;
+}
+
+input::-moz-placeholder {
+  color: #fff;
+}
+
+input:-ms-input-placeholder {
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
