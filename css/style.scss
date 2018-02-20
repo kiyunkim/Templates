@@ -2,15 +2,20 @@ $fontfamily: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
 $black: #333;
 $white: #fff;
 
+@mixin box-shadow($var) {
+  -webkit-box-shadow: $var;
+  -moz-box-shadow: $var;
+  box-shadow: $var;
+}
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
 }
-@mixin box-sizing {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+@mixin box-sizing($var) {
+  -webkit-box-sizing: $var;
+  -moz-box-sizing: $var;
+  box-sizing: $var;
 }
 @mixin transition($var) {
   -webkit-transition: $var;
@@ -29,6 +34,19 @@ $white: #fff;
 @mixin translate($x, $y) {
   @include transform(translate($x, $y));
 }
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content};
+  &:-moz-placeholder           {@content};
+  &::-moz-placeholder          {@content};
+  &:-ms-input-placeholder      {@content}; 
+}
+// to use :
+input {
+  @include placeholder() {
+    color: #fff;
+  }
+}
+
 
 // below from
 // joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
@@ -50,19 +68,5 @@ $white: #fff;
   }
   @keyframes #{$animationName} {
     @content;
-  }
-}
-
-@mixin placeholder {
-  &::-webkit-input-placeholder {@content}
-  &:-moz-placeholder           {@content}
-  &::-moz-placeholder          {@content}
-  &:-ms-input-placeholder      {@content}  
-}
-
-// to use :
-input {
-  @include placeholder() {
-    color: #fff;
   }
 }
