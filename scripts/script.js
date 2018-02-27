@@ -6,8 +6,18 @@ var ObjConstructor = (function (option) {
     myVariable = option.myVariable,
     anotherVariable = option.anotherVariable;
 
-  proto.myFunc = function () {
+  /**
+   * Represents a book.
+   * @constructor
+   * @param {string} title - The title of the book.
+   * @param {string} author - The author of the book.
+   */
+  function Book(title, author) {
     // .. 
+  }
+
+  proto.myFunc = function () {
+    Book();
   };
 
   proto.setup = function () {
