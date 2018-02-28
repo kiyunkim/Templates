@@ -2,6 +2,9 @@ $fontfamily: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
 $black: #333;
 $white: #fff;
 
+/* ------------------------------------
+  Mixins
+  ------------------------------------ */
 @mixin box-shadow($var) {
   -webkit-box-shadow: $var;
   -moz-box-shadow: $var;
@@ -47,9 +50,12 @@ input {
   }
 }
 
+/** 
+ *  Animation Mixin
+ *
+ *  from: joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
+ */
 
-// below from
-// joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
 @mixin animation($animations) {
   -webkit-animation: $animations;
   -moz-animation:    $animations;
