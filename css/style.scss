@@ -22,16 +22,12 @@ $white: #fff;
 }
 @mixin transition($var) {
   -webkit-transition: $var;
-  -moz-transition: $var;
-  -ms-transition: $var;
   -o-transition: $var;
   transition: $var;
 }
 @mixin transform($var) {
   -webkit-transform: $var;
-  -moz-transform: $var;
   -ms-transform: $var;
-  -o-transform: $var;
   transform: $var;
 }
 @mixin translate($x, $y) {
