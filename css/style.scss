@@ -1,10 +1,8 @@
-$fontfamily: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-$black: #333;
-$white: #fff;
-
 /* ------------------------------------
-  Mixins
+  Variables, Mixins
 ------------------------------------ */
+$fontfamily: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
 @mixin box-shadow($var) {
   -webkit-box-shadow: $var;
   -moz-box-shadow: $var;
@@ -33,29 +31,12 @@ $white: #fff;
 @mixin translate($x, $y) {
   @include transform(translate($x, $y));
 }
-@mixin placeholder {
-  &::-webkit-input-placeholder {@content};
-  &:-moz-placeholder           {@content};
-  &::-moz-placeholder          {@content};
-  &:-ms-input-placeholder      {@content}; 
-}
-// to use :
-input {
-  @include placeholder() {
-    color: #fff;
-  }
-}
-
-/** 
- *  Animation Mixin
- *  joshbroton.com/quick-fix-sass-mixins-for-css-keyframe-animations/
- */
-
-@mixin animation($animations) {
-  -webkit-animation: $animations;
-  -moz-animation:    $animations;
-  -o-animation:      $animations;
-  animation:         $animations;
+@mixin animation($animation) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};  
 }
 @mixin keyframes($animationName) {
   @-webkit-keyframes #{$animationName} {
@@ -70,4 +51,39 @@ input {
   @keyframes #{$animationName} {
     @content;
   }
+}
+/* form placeholder styling */
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content};
+  &:-moz-placeholder           {@content};
+  &::-moz-placeholder          {@content};
+  &:-ms-input-placeholder      {@content}; 
+}
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+
+
+/* ------------------------------------
+  Style Usage
+------------------------------------ */
+
+// @placeholder
+input {
+  @include placeholder() {
+    color: #fff;
+  }
+}
+
+// %visuallyhidden
+.visually-hidden {
+  @extend %visuallyhidden;
 }
