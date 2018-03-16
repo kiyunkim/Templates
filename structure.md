@@ -1,4 +1,4 @@
-# Structure
+# Folder Structure
 
 ```text
 root
