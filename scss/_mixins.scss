@@ -1,11 +1,6 @@
 /* ------------------------------------
-  Variables, Mixins
+  Mixins
 ------------------------------------ */
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
-
-$fontfamily: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-$font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
-
 @mixin box-shadow($var) {
   -webkit-box-shadow: $var;
   -moz-box-shadow: $var;
@@ -62,6 +57,15 @@ $font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-
   &::-moz-placeholder          {@content};
   &:-ms-input-placeholder      {@content}; 
 }
+/* --------------------
+  USAGE:
+  input {
+    @include placeholder() {
+      color: #fff;
+    }
+  }
+  --------------------- */
+  
 %visuallyhidden {
   margin: -1px;
   padding: 0;
@@ -72,21 +76,9 @@ $font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
-
-
-
-/* ------------------------------------
-  Style Usage
------------------------------------- */
-
-// @placeholder
-input {
-  @include placeholder() {
-    color: #fff;
+/* --------------------
+  USAGE:
+  .sr-only {
+    @extend %visuallyhidden;
   }
-}
-
-// %visuallyhidden
-.visually-hidden {
-  @extend %visuallyhidden;
-}
+  --------------------- */

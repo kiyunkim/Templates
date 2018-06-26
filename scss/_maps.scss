@@ -1,0 +1,19 @@
+/* ------------------------------------
+  Map functions
+
+  Maps in Sass are immutable; all map functions return a new map rather than updating the existing map in-place.
+
+  map-get($map, $key) : Returns the value in a map associated with a given key.
+
+  map-merge($map1, $map2) : Merges two maps together into a new map.
+
+  map-remove($map, $keys…) : Returns a new map with keys removed.
+
+  map-keys($map) : Returns a list of all keys in a map.
+
+  map-values($map) : Returns a list of all values in a map.
+
+  map-has-key($map, $key) : Returns whether a map has a value associated with a given key.
+
+  keywords($args) : Returns the keywords passed to a function that takes variable arguments.
+------------------------------------ */

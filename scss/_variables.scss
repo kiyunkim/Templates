@@ -1,0 +1,27 @@
+/* ------------------------------------
+  Variables
+------------------------------------ */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+$fontfamily: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+
+/* ------------------------------------
+  Define selector
+------------------------------------ */
+
+$header-class: '.header';
+  // Usage:
+  #{$header-class} {
+    position: fixed;
+  }
+
+/* ------------------------------------
+  Define breakpoints
+------------------------------------ */
+
+$bp-small: 480px;
+  // Usage:
+  @media screen and (max-width: #{$bp-small}) {
+    // ..
+  }

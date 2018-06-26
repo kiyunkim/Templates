@@ -1,0 +1,15 @@
+/* ------------------------------------
+  Color functions in SASS
+------------------------------------ */
+.color-functions {
+  color: hsla($hue, $saturation, $lightness, $alpha); // plain hsl works as well
+  
+  color: saturate($color, $amount);
+  color: desaturate($color: #f23, $amount: 0.5);
+  color: grayscale($color: #f23);
+
+  color: complement($color: #f23);
+  color: invert($color: #f23, $weight: 1); // weight optional
+
+  color: rgba($color, $alpha); // shorthand to convert alpha/opacity
+}
