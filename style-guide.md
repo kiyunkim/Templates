@@ -20,6 +20,7 @@
 
 - Avoid element targeting
 - [Generic Class Names](http://www.deemble.com/deeadmin/v1_2_0/classes.html)
+- [CSS Style Guide Examples](https://css-tricks.com/css-style-guides/)
 
 ### SCSS
 
