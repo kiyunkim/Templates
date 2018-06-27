@@ -3,6 +3,10 @@
 ------------------------------------ */
 .color-functions {
   color: hsla($hue, $saturation, $lightness, $alpha); // plain hsl works as well
+
+  // instead of lighten/darken, try mix
+  color: mix($color, $white, 60%); // lighter, give more weight to $white
+  color: mix($color, $black, 40%); // darker, give more weight to $color
   
   color: saturate($color, $amount);
   color: desaturate($color: #f23, $amount: 0.5);

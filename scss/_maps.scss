@@ -16,4 +16,61 @@
   map-has-key($map, $key) : Returns whether a map has a value associated with a given key.
 
   keywords($args) : Returns the keywords passed to a function that takes variable arguments.
+
+
+  Good links:
+  https://www.sitepoint.com/using-sass-maps/
+  https://www.sitepoint.com/extra-map-functions-sass/
+  http://blog.grayghostvisuals.com/sass/real-sass-real-maps/
 ------------------------------------ */
+
+$map-zindex: (
+  'default': 1,
+  'high': 99,
+  'highest': 9999
+);
+
+$breakpoints: (
+  'small': '480px',
+  'medium': '768px',
+  'large': '1024px',
+);
+
+@mixin min-width($breakpoint) { 
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+  @else {
+    @warn "no value retrieved from `#{$breakpoint}`";
+  }
+}
+
+.element {
+  color: hotpink;
+
+  @include min-width(small) {
+    color: tomato;
+  }
+}
+
+
+
+$colors-map: (
+  'primary': #f00,
+  'secondary': #ff3,
+);
+
+.element {
+  background: map-get($colors-map, 'secondary');
+}
+
+@function color($key) {
+  @if map-has-key($colors-map, $key) {
+    @return map-get($colors-map, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
